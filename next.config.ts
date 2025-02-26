@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
   basePath: isProd ? "/nextjs-github-pages" : "",
-  assetPrefix: isProd ? "/nextjs-github-pages/" : "",
+  assetPrefix: isProd ? "https://norcortex.github.io/nextjs-github-pages/" : "",
 
   /**
    * Disable server-based image optimization. Next.js does not support
