@@ -60,7 +60,7 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-2 mb-6">
             <div className="flex flex-col space-y-2 font-montserrat text-center">
-              <Link href="/" className="hover:text-gray-600 font-semibold text-xs">ABOUT</Link>
+              <Link href="/about" className="hover:text-gray-600 font-semibold text-xs">ABOUT</Link>
               <Link href="/member" className="hover:text-gray-600 font-semibold text-xs">COLLABORATORS</Link>
               {/* <Link href="/publication" className="hover:text-gray-600 font-semibold text-sm">PUBLICATIONS</Link> */}
               <Link href="/alumni" className="hover:text-gray-600 font-semibold uppercase text-xs">Alumni</Link>
