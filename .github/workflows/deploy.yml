@@ -1,36 +1,23 @@
-# Sample workflow for building and deploying a Next.js site to GitHub Pages
-#
-# To get started with Next.js see: https://nextjs.org/docs/getting-started
-#
 name: Deploy Next.js site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches:
       - main
       - feature/**
       - fix/**
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_path: ${{ steps.upload_artifact.outputs.artifact_path }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,17 +49,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          # If source files changed but packages didn't, rebuild from a prior cache.
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
@@ -83,11 +59,12 @@ jobs:
         run: touch out/.nojekyll
 
       - name: Upload artifact
+        id: upload_artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
-  # Deployment job
+  # Production deployment on main
   deploy-prod:
     if: github.ref == 'refs/heads/main'
     needs: build
@@ -99,17 +76,44 @@ jobs:
       - name: Deploy to GitHub Pages (Production)
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # This publishes your main branch build to the root of gh-pages
+          publish_branch: gh-pages
+          publish_dir: out
+          clean: true
 
+  # Preview deployment on feature/ or fix/
   deploy-preview:
     if: startsWith(github.ref, 'refs/heads/feature/') || startsWith(github.ref, 'refs/heads/fix/')
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages-dev
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-pages-artifact@v1
+        with:
+          path: out
+
+      # Clean up the branch name so we can use it as a folder (replace slashes with dashes).
+      - name: Prepare preview folder
+        run: |
+          BRANCH_NAME="${GITHUB_REF_NAME//\//-}"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+          mv out "out-$BRANCH_NAME"
+
       - name: Deploy to GitHub Pages (Preview)
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          branch: gh-pages-${{ github.ref_name }}
+          publish_branch: gh-pages
+          # Publish to a subfolder, e.g. gh-pages/feature-xyz
+          publish_dir: "out-${{ env.BRANCH_NAME }}"
+          clean: false  # don't wipe out the entire gh-pages branch
+
+      - name: Show preview URL
+        run: |
+          echo "Preview URL: https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/out-${{ env.BRANCH_NAME }}/"
