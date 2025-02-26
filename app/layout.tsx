@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 
 const MontserratFont = Montserrat({
   variable: "--font-montserrat",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
