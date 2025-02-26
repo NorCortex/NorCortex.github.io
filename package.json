@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "touch out/.nojekyll && gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
