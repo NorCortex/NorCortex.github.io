@@ -15,7 +15,7 @@ export interface AlumniGroup {
       graduationYear: 2023,
       members: [
         { name: "Sorawanan Jeamjantarasakhon", quote: "If idiot can fly, this place would be an airport", image: "/assets/alumni/Sorawanan.jpg" },
-        { name: "Chanatip Deemee", quote: "Graduated in Data Science. Still can’t find the correlation between my degree and my job", image: "/assets/alumni/Chanatip.jpg" },
+        { name: "Chanatip Deemee", quote: "Graduated in Data Science. Still can’t find the correlation between my degree and my job test deploy feature", image: "/assets/alumni/Chanatip.jpg" },
         { name: "Kittipat Arpanon", quote: "Graduated: Got a degree, still can't figure out how to pay taxes", image: "/assets/alumni/Kittipat.jpg" },
       ],
     },

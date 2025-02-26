@@ -113,3 +113,5 @@ jobs:
       - name: Deploy to GitHub Pages (Preview)
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          branch: ${{ github.ref_name  }}
