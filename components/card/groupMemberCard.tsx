@@ -14,7 +14,7 @@ interface AlumniCardProps {
   group: AlumniGroup;
 }
 
-const AlumniCard: React.FC<AlumniCardProps> = ({ group }) => {
+const AlumniCard = ({ group }: AlumniCardProps) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 flex flex-col items-center text-center max-w-sm mx-auto">
       <div className="mb-5">

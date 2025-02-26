@@ -1,5 +1,8 @@
 import Image from "next/image";
 import profileData from "@/data/profile";
+import Education from "@/components/about/education";
+import Research from "@/components/about/research";
+import Awards from "@/components/about/awards";
 
 const About = () => {
     const { image, name, description, education, researchInterests, awards } = profileData;
@@ -50,33 +53,21 @@ const About = () => {
 
             <section className="mb-12">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                    Education
+                    🎓 Education
                 </h2>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    {education.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
+                <Education education={education} />
             </section>
 
             <section className="mb-12">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                    Research Interests
+                    🔬 Research Interests
                 </h2>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    {researchInterests.map((interest, index) => (
-                        <li key={index}>{interest}</li>
-                    ))}
-                </ul>
+                <Research researchInterests={researchInterests} />
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold text-gray-800 mb-4">Awards</h2>
-                <ul className="list-disc list-inside text-gray-700 space-y-2">
-                    {awards.map((award, index) => (
-                        <li key={index}>{award}</li>
-                    ))}
-                </ul>
+                <h2 className="text-2xl font-semibold text-gray-800 mb-4">🏆 Awards</h2>
+                <Awards awards={awards} />
             </section>
         </div>
     );

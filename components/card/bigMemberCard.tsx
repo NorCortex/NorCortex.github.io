@@ -16,7 +16,7 @@ interface BigMemberCardProps {
   member: BigMember;
 }
 
-const BigMemberCard: React.FC<BigMemberCardProps> = ({ member }) => {
+const BigMemberCard = ({ member }: BigMemberCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
       <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">

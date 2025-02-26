@@ -15,7 +15,7 @@ interface MemberCardProps {
   members: Member[];
 }
 
-const MemberCard: React.FC<MemberCardProps> = ({ members }) => {
+const MemberCard = ({ members }: MemberCardProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {members.map((member) => (
@@ -27,7 +27,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ members }) => {
             <Image
               src={member.image}
               alt={member.name}
-              width={500} 
+              width={500}
               height={300}
               className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-gray-300 shadow-sm"
             />
