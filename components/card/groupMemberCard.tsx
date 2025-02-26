@@ -6,6 +6,7 @@ interface AlumniGroup {
   members: {
     name: string;
     image: string;
+    quote?: string; // Optional quote property
   }[];
 }
 
@@ -34,6 +35,9 @@ const AlumniCard: React.FC<AlumniCardProps> = ({ group }) => {
               />
             </div>
             <h3 className="text-sm font-medium text-gray-800 mt-2">{member.name}</h3>
+            {member.quote && (
+              <p className="text-xs text-gray-600 mt-1 italic">"{member.quote}"</p>
+            )}
           </div>
         ))}
       </div>
