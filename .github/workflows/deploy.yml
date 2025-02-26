@@ -104,6 +104,7 @@ jobs:
           BRANCH_NAME="${{ github.ref_name }}"
           BRANCH_NAME="${BRANCH_NAME//\//-}"
           echo "BRANCH_NAME=${BRANCH_NAME}" >> $GITHUB_ENV
+          echo "DEPLOYED_GITHUB_PATH=out-${BRANCH_NAME}" >> $GITHUB_ENV
           mv out "out-$BRANCH_NAME"
 
       - name: Deploy to GitHub Pages (Preview)
