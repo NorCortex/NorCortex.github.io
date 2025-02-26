@@ -24,6 +24,8 @@ const BigMemberCard: React.FC<BigMemberCardProps> = ({ member }) => {
           <Image
             src={member.image}
             alt={member.name}
+            width={500} // Set the width
+            height={300} // Set the height
             className="w-32 h-32 rounded-full object-cover border-2 border-gray-200 shadow-sm"
           />
         </div>

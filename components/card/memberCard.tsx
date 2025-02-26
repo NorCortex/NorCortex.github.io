@@ -27,6 +27,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ members }) => {
             <Image
               src={member.image}
               alt={member.name}
+              width={500} 
+              height={300}
               className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-gray-300 shadow-sm"
             />
           </div>
