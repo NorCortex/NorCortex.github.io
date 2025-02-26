@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface Member {
   name: string;
   position?: string;
@@ -22,7 +24,7 @@ const MemberCard: React.FC<MemberCardProps> = ({ members }) => {
           className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 text-center border border-gray-200"
         >
           <div className="mb-4">
-            <img
+            <Image
               src={member.image}
               alt={member.name}
               className="w-24 h-24 rounded-full mx-auto object-cover border-2 border-gray-300 shadow-sm"

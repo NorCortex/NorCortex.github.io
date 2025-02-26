@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface BigMember {
   name: string;
   position?: string;
@@ -19,7 +21,7 @@ const BigMemberCard: React.FC<BigMemberCardProps> = ({ member }) => {
     <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
       <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6">
         <div className="flex-shrink-0">
-          <img
+          <Image
             src={member.image}
             alt={member.name}
             className="w-32 h-32 rounded-full object-cover border-2 border-gray-200 shadow-sm"
