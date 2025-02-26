@@ -3,6 +3,7 @@ export interface AlumniGroup {
     graduationYear: number;
     members: {
       name: string;
+      quote?: string;
       image: string;
     }[];
   }
@@ -13,18 +14,18 @@ export interface AlumniGroup {
       // co-advisor: "Tipajin Thaipisutikul",
       graduationYear: 2023,
       members: [
-        { name: "Sorawanan Jeamjantarasakhon", image: "/images/alice.jpg" },
-        { name: "Chanathip Deemee", image: "/images/bob.jpg" },
-        { name: "Kittipat Arpanon", image: "/images/charlie.jpg" },
+        { name: "Sorawanan Jeamjantarasakhon", quote: "If idiot can fly, this place would be an airport", image: "/assets/alumni/Sorawanan.jpg" },
+        { name: "Chanatip Deemee", quote: "Graduated in Data Science. Still can’t find the correlation between my degree and my job", image: "/assets/alumni/Chanatip.jpg" },
+        { name: "Kittipat Arpanon", quote: "Graduated: Got a degree, still can't figure out how to pay taxes", image: "/assets/alumni/Kittipat.jpg" },
       ],
     },
     {
       projectTitle: "eDuck: Adapting LLMs as an Educational Tool for Learning to Code.",
       graduationYear: 2023,
       members: [
-        { name: "Doungnapat Thiansukont", image: "/images/david.jpg" },
-        { name: "Sarayut Theeraumpronpunt", image: "/images/emma.jpg" },
-        { name: "Nubthong Worathong", image: "/images/franklin.jpg" },
+        { name: "Doungnapat Thiansukont", quote: "Got my software degree. Still wondering why life keeps throwing 404s" , image: "/assets/alumni/Doungnapat.jpg" },
+        { name: "Sarayut Theeraumpronpunt ", quote: "Graduated with a degree in coding. Still waiting for life to compile without errors", image: "/assets/alumni/Sarayut.jpg" },
+        { name: "Nubthong Worathong ", quote: "Graduated with a degree in Data Science, but still unsure how to parse life", image: "/assets/alumni/Nubthong.jpg" },
       ],
     },
   ];
