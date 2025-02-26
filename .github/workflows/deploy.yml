@@ -105,11 +105,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      # Assumes that you have set up a separate GitHub Pages environment (or branch)
-      # for preview deployments.
       name: github-pages-dev
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages (Preview)
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          branch: gh-pages-${{ github.ref_name }}
