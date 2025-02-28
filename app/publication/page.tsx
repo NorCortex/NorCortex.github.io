@@ -1,4 +1,4 @@
-import publications  from "@/data/lab-publication";
+import publications  from "@/data/norPublications";
 
 export default function Publication() {
 
