@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profileData from "@/data/profile";
+import profileData from "@/data/norProfileData";
 import Education from "@/components/about/education";
 import Research from "@/components/about/research";
 import Awards from "@/components/about/awards";
@@ -24,14 +24,14 @@ const About = () => {
                     <h1 className="text-3xl font-bold text-gray-800 mb-4">{name}</h1>
                     <p className="text-gray-600 mb-4">{description}</p>
                     <p className="text-gray-700 leading-relaxed">
-                        I'm an Assistant Professor at the <a
+                        Nor is an Assistant Professor at the <a
                             href="https://www.ict.mahidol.ac.th/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-500 hover:underline"
                         >
                             Faculty of Information and Communication Technology, Mahidol University
-                        </a>.  I complete my Ph.D. from   <a
+                        </a>.  He complete his Ph.D. from   <a
                             href="https://www.northwestern.edu/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const About = () => {
                         >
                             Doug Downey
                         </a>.
-                        My research interests include natural language processing and machine learning.
+                        His research interests include natural language processing and machine learning.
                     </p>
                 </div>
             </div>
