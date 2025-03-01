@@ -53,12 +53,12 @@ const Navbar = () => {
 
         {/* Mobile Menu with Overlay Click to Close */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-5 z-50" onClick={closeMenu}>
+          <div className="fixed inset-0 z-50" onClick={closeMenu}>
             <div 
               className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-b-lg py-6"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
             >
-              <div className="flex flex-col items-center space-y-4 text-lg font-montserrat">
+              <div className="flex flex-col items-center space-y-4 text-md font-montserrat">
                 <Link href="/about" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>About</Link>
                 <Link href="/member" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Member</Link>
                 <Link href="/alumni" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Alumni</Link>
