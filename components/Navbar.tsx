@@ -9,7 +9,7 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="bg-white shadow-md relative">
+    <nav className="bg-white shadow-md sticky top-0 z-40 w-full">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -50,23 +50,24 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu with Overlay Click to Close */}
-        {isMenuOpen && (
-          <div className="fixed inset-0 z-50" onClick={closeMenu}>
-            <div 
-              className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-b-lg py-6"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-            >
-              <div className="flex flex-col items-center space-y-4 text-md font-montserrat">
-                <Link href="/about" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>About</Link>
-                <Link href="/member" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Member</Link>
-                <Link href="/alumni" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Alumni</Link>
-              </div>
+      {/* Mobile Menu with Overlay Click to Close */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50" onClick={closeMenu}>
+          {/* Menu Content with Gap from the Top (below the navbar) */}
+          <div 
+            className="absolute top-16 left-0 w-full bg-white shadow-lg rounded-b-lg py-6"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+          >
+            <div className="flex flex-col items-center space-y-4 text-md font-montserrat">
+              <Link href="/about" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>About</Link>
+              <Link href="/member" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Member</Link>
+              <Link href="/alumni" className="hover:text-gray-600 font-semibold" onClick={closeMenu}>Alumni</Link>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 };
