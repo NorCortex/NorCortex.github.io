@@ -1,5 +1,5 @@
 import React from "react";
-import AlumniCard from "@/components/card/groupMemberCard";
+import AlumniCard from "@/components/card/alumniCard";
 import { alumniGroups } from "@/data/alumni";
 
 const groupByYear = () => {
@@ -22,19 +22,21 @@ export default function AlumniPage() {
         <span className="border-b-2 border-blue-600 pb-2">Alumni</span>
       </h1>
 
-      {Object.entries(groupedAlumni).map(([year, groups]) => (
-        <div key={year} className="mb-12">
-          <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">
+      {Object.entries(groupedAlumni)
+        .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+        .map(([year, groups]) => (
+          <div key={year} className="mb-12">
+            {/* <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">
             Class of {year}
-          </h2>
+          </h2> */}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {groups.map((group, index) => (
-              <AlumniCard key={index} group={group} />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {groups.map((group, index) => (
+                <AlumniCard key={index} group={group} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }

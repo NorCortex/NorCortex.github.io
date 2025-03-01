@@ -59,4 +59,137 @@ export const alumniGroups: AlumniGroup[] = [
       },
     ],
   },
+  {
+    projectTitle:
+      "Olive: Online Learning Platform with Interaction and Visual Engagement Analysis",
+    graduationYear: 2022,
+    members: [
+      {
+        name: "Anyamanee Amatyakul",  
+        image: "/assets/placeholder.png",
+      },
+      {
+        name: "Kasidis Chokphaiboon",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Kittitad Jiraprasitchai",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "StackECK: Multi-Modal Stack overflow Post Search Using Keyword, Code and Error",
+    graduationYear: 2022,
+    members: [
+      {
+        name: "Thanakorn Limpanawuthi",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Wish Suchalermkul",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Punyaporn Srisuk",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "eSit: Ergonomic Sitting Posture Monitoring System Using Computer Vision Techniques",
+    graduationYear: 2021,
+    members: [
+      {
+        name: "Jirachaya Wongsuppakarn",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Wipada Kaewthong",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Soksedtha Ly",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "Mirai: Web-based Virtual Waller for Arcade Center",
+    graduationYear: 2021,
+    members: [
+      {
+        name: "Natthapon Kobkulkalyakorn",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Phumrapee Limpianchop",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Trin Nuchcharoen",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "Development of an Automate Suture Performance Evaluation and Feedback Generation System for Outcome Images of Wound Suturing Practice on a Bench Model",
+    graduationYear: 2020,
+    members: [
+      {
+        name: "Wutthipat Muesantad", 
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Dujnapa Tanundet",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Tanaporn Rojanaridpiched",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "Mandy: Empirical Investigation and Supporting Program of Mandibular Fracture Classification and Localization Algorithms on X-ray Images of Skulls",
+    graduationYear: 2019,
+    members: [
+      {
+        name: "Phrugsa Limbunlom", 
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Pitchaya Dachoponchai",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Kramolneat Chitsue",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
+  {
+    projectTitle:
+      "@Cody: Simple Blood Sugar Level and Food Tracking via Line Platform",
+    graduationYear: 2018,
+    members: [
+      {
+        name: "Kanda Cheevathammarat", 
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Suriyapa Pongpaijit",
+          image: "/assets/placeholder.png",
+      },
+      {
+        name: "Pannara Suwannikkha",
+          image: "/assets/placeholder.png",
+      },
+    ],
+  },
 ];

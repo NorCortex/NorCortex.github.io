@@ -29,8 +29,8 @@ const AlumniCard = ({ group }: AlumniCardProps) => {
               <Image
                 src={member.image}
                 alt={member.name}
-                layout="fill"
-                objectFit="cover"
+                width={500}
+                height={300}
                 className="rounded-full border-2 border-gray-200 shadow-sm"
               />
             </div>
