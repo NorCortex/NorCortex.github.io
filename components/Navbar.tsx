@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-2">
+        <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
@@ -26,11 +26,10 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex flex-grow justify-center space-x-4 font-montserrat text-sm">
-            <Link href="/about" className="hover:text-gray-600 font-semibold px-4">About</Link>
-            <Link href="/member" className="hover:text-gray-600 font-semibold px-4">Member</Link>
-            {/* <Link href="/publication" className="hover:text-gray-600 font-semibold px-4">PUBLICATIONS</Link> */}
-            <Link href="/alumni" className="hover:text-gray-600 font-semibold px-4">Alumni</Link>
+          <div className="hidden md:flex flex-grow justify-center space-x-6 font-montserrat text-sm">
+            <Link href="/about" className="hover:text-gray-600 font-semibold">About</Link>
+            <Link href="/member" className="hover:text-gray-600 font-semibold">Member</Link>
+            <Link href="/alumni" className="hover:text-gray-600 font-semibold">Alumni</Link>
           </div>
 
           <div className="md:hidden">
@@ -45,28 +44,23 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
               </svg>
             </button>
           </div>
-
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden mt-2 mb-6">
-            <div className="flex flex-col space-y-2 font-montserrat text-center">
-              <Link href="/about" className="hover:text-gray-600 font-semibold text-xs">About</Link>
-              <Link href="/member" className="hover:text-gray-600 font-semibold text-xs">Member</Link>
-              {/* <Link href="/publication" className="hover:text-gray-600 font-semibold text-sm">PUBLICATIONS</Link> */}
-              <Link href="/alumni" className="hover:text-gray-600 font-semibold text-xs">Alumni</Link>
-            </div>
+        <div
+          className={`transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          } md:hidden absolute top-16 left-0 w-full bg-white shadow-md`}
+        >
+          <div className="flex flex-col items-center py-4 space-y-4 text-sm font-montserrat">
+            <Link href="/about" className="hover:text-gray-600 font-semibold">About</Link>
+            <Link href="/member" className="hover:text-gray-600 font-semibold">Member</Link>
+            <Link href="/alumni" className="hover:text-gray-600 font-semibold">Alumni</Link>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
