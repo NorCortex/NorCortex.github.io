@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     
                     {/* Navigation Links */}
-                    <div className="flex flex-col md:flex-row md:space-x-8">
+                    <div className="flex flex-col md:flex-row md:space-x-8 gap-6 md:gap-0">
                         <div className="flex flex-col space-y-2">
                             <h3 className="text-lg font-semibold">Research</h3>
                             <Link href="/" className="text-sm hover:text-gray-400">Projects</Link>
@@ -40,12 +40,8 @@ const Footer = () => {
                         <p className="text-sm">Mahidol University</p>
                         <p className="text-sm">999 Phuttamonthon 4 Road, Salaya</p>
                         <p className="text-sm">Nakhon Pathom, 73170, Thailand</p>
-                        {/* <div className="flex space-x-4 mt-2">
-                            <Link href="#" className="hover:text-gray-400">GitHub</Link>
-                        </div> */}
                     </div>
                 </div>
-                
 
                 <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm text-gray-400">
                     &copy; {new Date().getFullYear()} Paranormal Lab. All rights reserved.
